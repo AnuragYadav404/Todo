@@ -34,14 +34,14 @@ function clearDisplay() {
 
 function getCurrentProjectNotes() {
   let projectNotes = localStorage.getItem(currentProject);
-  // console.log(projectNotes)
+  
   let projectNotesArray = JSON.parse(projectNotes);
   return projectNotesArray;
 }
 
 function displaycurrentProjectNotes() {
   let projectNotesArray = getCurrentProjectNotes();
-  // console.log(projectNotesArray);
+  
   projectNotesArray.map((obj)=>{
     const childEle = createNote(obj);
     display.appendChild(childEle);
@@ -50,7 +50,7 @@ function displaycurrentProjectNotes() {
 
 function addNote(noteObj) {
   let projectNotesArray = getCurrentProjectNotes();
-  // console.log(projectNotesArray);
+  
   projectNotesArray.push(noteObj);
   localStorage.setItem(`${currentProject}`,  JSON.stringify(projectNotesArray));
   clearDisplay();
@@ -63,13 +63,13 @@ myForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(myForm);
   const formValues = Object.fromEntries(formData.entries());
-  // console.log(formValues);
+  
   addNote(formValues);
   e.target.reset();
 })
 
 function deleteFromtodoNotesArray(ele) {
-  // console.log(ele);
+  
   let notes = getCurrentProjectNotes();
   notes.splice(ele.data, 1);
   localStorage.setItem(`${currentProject}`,  JSON.stringify(notes));
@@ -93,7 +93,7 @@ function createNote(obj) {
   deleteBtn.setAttribute('data', currentProject.length);
   deleteBtn.addEventListener('click', function(e) {
     deleteFromtodoNotesArray(e.target)
-    // console.log(e.target.parentElement);
+    
     e.target.parentElement.remove();
   });
   ele.append(title, date, deleteBtn);
