@@ -34,7 +34,7 @@ function clearDisplay() {
 
 function getCurrentProjectNotes() {
   let projectNotes = localStorage.getItem(currentProject);
-  console.log(projectNotes)
+  // console.log(projectNotes)
   let projectNotesArray = JSON.parse(projectNotes);
   return projectNotesArray;
 }
@@ -50,7 +50,7 @@ function displaycurrentProjectNotes() {
 
 function addNote(noteObj) {
   let projectNotesArray = getCurrentProjectNotes();
-  console.log(projectNotesArray);
+  // console.log(projectNotesArray);
   projectNotesArray.push(noteObj);
   localStorage.setItem(`${currentProject}`,  JSON.stringify(projectNotesArray));
   clearDisplay();
@@ -69,7 +69,7 @@ myForm.addEventListener('submit', function(e) {
 })
 
 function deleteFromtodoNotesArray(ele) {
-  console.log(ele);
+  // console.log(ele);
   let notes = getCurrentProjectNotes();
   notes.splice(ele.data, 1);
   localStorage.setItem(`${currentProject}`,  JSON.stringify(notes));
