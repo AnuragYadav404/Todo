@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    /* background: #fad0c4;     */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, rgba(250,208,196,0.5), rgba(255,209,255,0.5)); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(250,208,196,0.5), rgba(255,209,255,0.5));
+
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    width: 65vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#Title {
+    font-size: 32px;
+    padding: 16px;
+    text-align: center;
+}
+
+#display {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    flex-grow: 1;
+}
+
+#display::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.Note {
+    display: flex;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+#myForm, #title{
+    flex-grow: 1;
+    display: flex;
+}
+
+
+input[type="text"],input[type="date"],input[type="submit"] {
+    border-bottom-style: groove;
+    border: none;
+    background-color: #eee;
+    font-size: 16px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
